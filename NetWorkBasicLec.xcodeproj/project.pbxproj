@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF84183F289230B7007A6C7C /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84183E289230B7007A6C7C /* TranslateViewController.swift */; };
+		CF84184128923ACE007A6C7C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84184028923ACE007A6C7C /* WebViewController.swift */; };
 		CFD41C512890DD7D00783E7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C502890DD7D00783E7D /* AppDelegate.swift */; };
 		CFD41C532890DD7D00783E7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C522890DD7D00783E7D /* SceneDelegate.swift */; };
 		CFD41C552890DD7D00783E7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C542890DD7D00783E7D /* ViewController.swift */; };
@@ -16,9 +18,13 @@
 		CFD41C652890E1FC00783E7D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C642890E1FC00783E7D /* SearchViewController.swift */; };
 		CFD41C6A2890E4E400783E7D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C682890E4E400783E7D /* ListTableViewCell.swift */; };
 		CFD41C6B2890E4E400783E7D /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD41C692890E4E400783E7D /* ListTableViewCell.xib */; };
+		CFD41C7028920CCF00783E7D /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C6F28920CCF00783E7D /* ViewPresentableProtocol.swift */; };
+		CFD41C722892236400783E7D /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C712892236400783E7D /* LottoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF84183E289230B7007A6C7C /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = SOURCE_ROOT; };
+		CF84184028923ACE007A6C7C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CFD41C4D2890DD7D00783E7D /* NetWorkBasicLec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetWorkBasicLec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD41C502890DD7D00783E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD41C522890DD7D00783E7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +36,8 @@
 		CFD41C642890E1FC00783E7D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CFD41C682890E4E400783E7D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		CFD41C692890E4E400783E7D /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		CFD41C6F28920CCF00783E7D /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
+		CFD41C712892236400783E7D /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +70,14 @@
 		CFD41C4F2890DD7D00783E7D /* NetWorkBasicLec */ = {
 			isa = PBXGroup;
 			children = (
+				CF84184028923ACE007A6C7C /* WebViewController.swift */,
+				CF84183E289230B7007A6C7C /* TranslateViewController.swift */,
+				CFD41C6E28920CB400783E7D /* Protocol */,
 				CFD41C502890DD7D00783E7D /* AppDelegate.swift */,
 				CFD41C522890DD7D00783E7D /* SceneDelegate.swift */,
 				CFD41C542890DD7D00783E7D /* ViewController.swift */,
 				CFD41C562890DD7D00783E7D /* Main.storyboard */,
+				CFD41C712892236400783E7D /* LottoViewController.swift */,
 				CFD41C642890E1FC00783E7D /* SearchViewController.swift */,
 				CFD41C682890E4E400783E7D /* ListTableViewCell.swift */,
 				CFD41C692890E4E400783E7D /* ListTableViewCell.xib */,
@@ -74,6 +86,14 @@
 				CFD41C5E2890DD7F00783E7D /* Info.plist */,
 			);
 			path = NetWorkBasicLec;
+			sourceTree = "<group>";
+		};
+		CFD41C6E28920CB400783E7D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CFD41C6F28920CCF00783E7D /* ViewPresentableProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +169,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD41C552890DD7D00783E7D /* ViewController.swift in Sources */,
+				CF84184128923ACE007A6C7C /* WebViewController.swift in Sources */,
 				CFD41C512890DD7D00783E7D /* AppDelegate.swift in Sources */,
 				CFD41C652890E1FC00783E7D /* SearchViewController.swift in Sources */,
+				CFD41C722892236400783E7D /* LottoViewController.swift in Sources */,
 				CFD41C532890DD7D00783E7D /* SceneDelegate.swift in Sources */,
+				CF84183F289230B7007A6C7C /* TranslateViewController.swift in Sources */,
+				CFD41C7028920CCF00783E7D /* ViewPresentableProtocol.swift in Sources */,
 				CFD41C6A2890E4E400783E7D /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

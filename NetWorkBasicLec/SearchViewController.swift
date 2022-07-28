@@ -49,6 +49,5 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
-    
-    
+        
 }
