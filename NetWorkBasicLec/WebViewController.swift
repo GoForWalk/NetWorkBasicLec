@@ -10,6 +10,8 @@ import WebKit
 
 class WebViewController: UIViewController, WKNavigationDelegate {
     
+    static let identifier: String = "WebViewController"
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var webView: WKWebView!
     
@@ -51,7 +53,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func xmarkButtonTapped(_ sender: UIBarButtonItem) {
-//        dismiss(animated: true)
+        dismiss(animated: true)
     }
     
     @IBAction func goBackButtonTapped(_ sender: UIBarButtonItem) {

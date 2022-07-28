@@ -29,6 +29,14 @@ class TranslateViewController: UIViewController {
         userInputTextView.resignFirstResponder()
     }
     
+    @IBAction func webViewButtonTapped(_ sender: UIButton) {
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController else { return }
+        
+        present(vc, animated: true)
+    }
+    
+    
 
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pgJ-h6-pSx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="79M-27-f1s">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -167,6 +167,17 @@
                                     <action selector="EditEndButtonTapped:" destination="79M-27-f1s" eventType="touchUpInside" id="1o1-vJ-2hP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjJ-LQ-cMi">
+                                <rect key="frame" x="165.5" y="798" width="83.5" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ei1-Ud-SzZ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="WebView"/>
+                                <connections>
+                                    <action selector="webViewButtonTapped:" destination="79M-27-f1s" eventType="touchUpInside" id="Kbs-2H-bV7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NDy-FE-C2z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -174,6 +185,8 @@
                             <constraint firstItem="NDy-FE-C2z" firstAttribute="trailing" secondItem="BP9-fw-MaQ" secondAttribute="trailing" constant="20" id="3p2-Rf-ZcT"/>
                             <constraint firstItem="dTP-eS-rGz" firstAttribute="top" secondItem="NDy-FE-C2z" secondAttribute="top" constant="20" id="7rN-rd-chC"/>
                             <constraint firstItem="BP9-fw-MaQ" firstAttribute="top" secondItem="dTP-eS-rGz" secondAttribute="bottom" constant="20" id="CNX-xv-ZlW"/>
+                            <constraint firstItem="cjJ-LQ-cMi" firstAttribute="centerX" secondItem="NDy-FE-C2z" secondAttribute="centerX" id="N49-VP-ANc"/>
+                            <constraint firstItem="NDy-FE-C2z" firstAttribute="bottom" secondItem="cjJ-LQ-cMi" secondAttribute="bottom" constant="20" id="SsM-KZ-PEG"/>
                             <constraint firstItem="dTP-eS-rGz" firstAttribute="leading" secondItem="NDy-FE-C2z" secondAttribute="leading" constant="20" id="w49-Sc-Mgl"/>
                             <constraint firstItem="NDy-FE-C2z" firstAttribute="trailing" secondItem="dTP-eS-rGz" secondAttribute="trailing" constant="20" id="xPl-KB-MK9"/>
                         </constraints>
@@ -189,7 +202,7 @@
         <!--Web View Controller-->
         <scene sceneID="Nkm-Qc-bss">
             <objects>
-                <viewController id="pgJ-h6-pSx" customClass="WebViewController" customModule="NetWorkBasicLec" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" id="pgJ-h6-pSx" customClass="WebViewController" customModule="NetWorkBasicLec" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IzV-wa-ttO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
