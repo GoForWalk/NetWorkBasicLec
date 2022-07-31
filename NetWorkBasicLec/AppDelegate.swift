@@ -8,13 +8,24 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //2. 노티 제거
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications() // 현재 올라온 노티들 제거
+//        UNUserNotificationCenter.current().removeAllPendingNotificationRequests() // 올라올 예정인 노티들 + 현재 노티들 모두 제거
+        // delegate 등록
+        UNUserNotificationCenter.current().delegate = self
         return true
+    }
+    
+    // 포그라운드 수신!!
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.list, .banner, .sound, .badge])
+        // iOS14 list, banner <-> alert
     }
 
     // MARK: UISceneSession Lifecycle

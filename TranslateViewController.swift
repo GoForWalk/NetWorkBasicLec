@@ -12,6 +12,8 @@ import UIKit
 
 class TranslateViewController: UIViewController {
     
+    static let fontName = "MabinogiClassicOTFR"
+    
     let placeholderText = "문장을 입력하세요."
 
     @IBOutlet weak var userInputTextView: UITextView!
@@ -23,6 +25,8 @@ class TranslateViewController: UIViewController {
         
         userInputTextView.text = placeholderText
         userInputTextView.textColor = .lightGray
+        
+        userInputTextView.font = UIFont(name: TranslateViewController.fontName, size: 17)
     }
     
     @IBAction func EditEndButtonTapped(_ sender: UIButton) {

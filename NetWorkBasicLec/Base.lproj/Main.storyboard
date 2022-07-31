@@ -277,7 +277,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyE-XR-qUq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4041" y="139"/>
+            <point key="canvasLocation" x="3612" y="147"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="mdm-ZR-E3N">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="7WE-1c-0k0" customClass="LocationViewController" customModule="NetWorkBasicLec" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cae-pT-vgz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13E-qB-faq">
+                                <rect key="frame" x="20" y="64" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="smQ-mD-7yU"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Local Notification"/>
+                                <connections>
+                                    <action selector="localNotificationButtonTapped:" destination="7WE-1c-0k0" eventType="touchUpInside" id="WA5-wh-bm7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uIf-pl-3Ma"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uIf-pl-3Ma" firstAttribute="trailing" secondItem="13E-qB-faq" secondAttribute="trailing" constant="20" id="9pN-CK-kno"/>
+                            <constraint firstItem="13E-qB-faq" firstAttribute="leading" secondItem="uIf-pl-3Ma" secondAttribute="leading" constant="20" id="Qzh-KL-7wt"/>
+                            <constraint firstItem="13E-qB-faq" firstAttribute="top" secondItem="uIf-pl-3Ma" secondAttribute="top" constant="20" id="mjf-Ta-JpK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Kj-LL-H0Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4968" y="139"/>
         </scene>
     </scenes>
     <resources>
