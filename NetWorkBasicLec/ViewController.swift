@@ -7,10 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, ViewPresentableProtocol {
-    
-    static let identifier: String = "ViewController"
-    
+class ViewController: UIViewController {
+        
     var backgroundColor: UIColor {
         get {
             return UIColor.systemCyan

@@ -10,8 +10,6 @@ import WebKit
 
 class WebViewController: UIViewController, WKNavigationDelegate {
     
-    static let identifier: String = "WebViewController"
-    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var webView: WKWebView!
     
