@@ -14,8 +14,9 @@ class BeerCollectionViewCell: UICollectionViewCell {
 
     func cellCongigure() {
         
-        beerImageView.backgroundColor = .lightGray
-        beerTitleView.backgroundColor = .lightGray
+        beerImageView.backgroundColor = .clear
+        beerTitleView.backgroundColor = .clear
         
+        beerTitleView.font = .systemFont(ofSize: 24)
     }
 }

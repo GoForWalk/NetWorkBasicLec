@@ -26,10 +26,18 @@ class BeerCollectionViewController: UIViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        requestBeer()
+
         beerCollectionView.delegate = self
         beerCollectionView.dataSource = self
         beerCollectionView.collectionViewLayout = setCellSize()
         
+        setUI()
+    }
+    
+    func setUI() {
+        self.view.backgroundColor = .orange
+        beerCollectionView.backgroundColor = .clear
     }
     
     func setCellSize() -> UICollectionViewFlowLayout {
@@ -52,17 +60,32 @@ class BeerCollectionViewController: UIViewController, UICollectionViewDelegate, 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 25
+        return beerArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BeerCollectionViewCell.identifier, for: indexPath) as? BeerCollectionViewCell else { return UICollectionViewCell()}
         
-        let url = "https://api.punkapi.com/v2/beers"
+        cell.beerTitleView.text = self.beerArray[indexPath.row].beerName
         
+        let imageString = self.beerArray[indexPath.row].beerImageURLString ?? "https://image.shutterstock.com/image-vector/love-beer-image-font-type-600w-331233908.jpg"
+        
+        let url = URL(string: imageString)!
+        
+        cell.beerImageView.kf.setImage(with: url)
+        
+        cell.cellCongigure()
+        
+        return cell
+    }//: cellForItemAt
+    
+    func requestBeer() {
+        
+        let url = "https://api.punkapi.com/v2/beers"
+
         DispatchQueue.global(qos: .userInteractive).async {
-            
+
             AF.request(url, method: .get).validate().responseJSON { response in
                 
                 switch response.result {
@@ -72,34 +95,17 @@ class BeerCollectionViewController: UIViewController, UICollectionViewDelegate, 
                     
                     for beer in json {
                         self.beerArray.append(BeerInfo(beerName: beer.1["name"].stringValue, beerImageURLString: beer.1["image_url"].string, description: beer.1["description"].string))
-                        
-                        DispatchQueue.main.async {
-                         
-                            cell.beerTitleView.text = self.beerArray[indexPath.row].beerName
-                            
-                            let imageString = self.beerArray[indexPath.row].beerImageURLString ?? "https://image.shutterstock.com/image-vector/love-beer-image-font-type-600w-331233908.jpg"
-                            
-                            guard let url = URL(string: imageString) else { return }
-                            
-                            cell.beerImageView.kf.setImage(with: url)
-                            
-                            
-                        }
                     }
                     
-                    print(self.beerArray)
+                    self.beerCollectionView.reloadData()
                     
                 case .failure(let error):
                     print(error)
                 }
+                
             }
-
         }
-        
-        cell.cellCongigure()
-        
-        return cell
-    }//: cellForItemAt
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
