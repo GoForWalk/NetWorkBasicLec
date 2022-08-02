@@ -17,12 +17,17 @@ class TranslateViewController: UIViewController {
     static let fontName = "MabinogiClassicOTFR"
     
     let placeholderText = "문장을 입력하세요."
+    let resultPlaceholderText = "번역 결과가 나옵니다."
     
     @IBOutlet weak var userInputTextView: UITextView!
+    @IBOutlet weak var resultTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUI()
+    }
+    
+    func setUI() {
         userInputTextView.delegate = self
         
         userInputTextView.text = placeholderText
@@ -30,11 +35,15 @@ class TranslateViewController: UIViewController {
         
         userInputTextView.font = UIFont(name: TranslateViewController.fontName, size: 17)
         
-        requestTranslate(text: "")
+        resultTextView.text = resultPlaceholderText
+        resultTextView.textColor = .lightGray
+        resultTextView.font = UIFont(name: TranslateViewController.fontName, size: 17)
     }
     
     @IBAction func EditEndButtonTapped(_ sender: UIButton) {
         userInputTextView.resignFirstResponder()
+
+        requestTranslate(text: userInputTextView.text.trimmingCharacters(in: .whitespacesAndNewlines))
     }
     
     @IBAction func webViewButtonTapped(_ sender: UIButton) {
@@ -49,7 +58,7 @@ class TranslateViewController: UIViewController {
         let url = (Endpoint.translateURL)
         
         let header: HTTPHeaders = ["X-Naver-Client-Id" : AuthKey.NAVER_ID, "X-Naver-Client-Secret": AuthKey.NAVER_SECRET]
-        let params: Parameters = ["source": "ko", "target": "en", "text": "안녕하세요"]
+        let params: Parameters = ["source": "ko", "target": "en", "text": text]
         
         DispatchQueue.global(qos: .userInteractive).async {
             // AF: 200 ~ 299 status code: Success
@@ -67,9 +76,9 @@ class TranslateViewController: UIViewController {
                         // 상태 코드에 따은 처리 필요
                         // Response
                         if statusCode == 200 {
-                            self.userInputTextView.text = json["message"]["result"]["translatedText"].stringValue
+                            self.resultTextView.text = json["message"]["result"]["translatedText"].stringValue
                         } else {
-                            self.userInputTextView.text = json["errorMessage"].stringValue
+                            self.resultTextView.text = json["errorMessage"].stringValue
                         }
                         
                     }

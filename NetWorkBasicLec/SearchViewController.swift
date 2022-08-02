@@ -44,11 +44,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         searchBar.delegate = self
         
+        
         // 테이블 뷰가 사용할 테이블뷰 셀(XIB) 등록
         // XIB: xml interface builder <= Nib
         searchTableView.register(UINib(nibName: ListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.identifier)
         
-        requestBoxOffice(dateText: "20220730")
+        requestBoxOffice(dateText: getYesterday())
     }
     
     func requestBoxOffice(dateText: String){
@@ -75,15 +76,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         
                         self.list.append(movie)
                     }
-                    
-//                    let movieNm1 = json["boxOfficeResult"]["dailyBoxOfficeList"][0]["movieNm"].stringValue
-//                    let movieNm2 = json["boxOfficeResult"]["dailyBoxOfficeList"][1]["movieNm"].stringValue
-//                    let movieNm3 = json["boxOfficeResult"]["dailyBoxOfficeList"][2]["movieNm"].stringValue
-//
-//                    // list 배열에 데이터 추가
-//                    self.list.append(movieNm1)
-//                    self.list.append(movieNm2)
-//                    self.list.append(movieNm3)
                     
                     self.searchTableView.reloadData()
                     
@@ -112,6 +104,20 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
         
+    func getYesterday() -> String {
+
+        let date = Date.now
+        let formatter = DateFormatter()
+
+        formatter.locale = Locale.init(identifier: "ko_kr")
+        formatter.timeZone = TimeZone(abbreviation: "KST")
+        formatter.dateFormat = "yyyyMMdd"
+
+        let yesterdaty = Calendar.current.date(byAdding: DateComponents(day: -1), to: date)!
+
+        print(formatter.string(from: yesterdaty))
+        return formatter.string(from: yesterdaty)
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {

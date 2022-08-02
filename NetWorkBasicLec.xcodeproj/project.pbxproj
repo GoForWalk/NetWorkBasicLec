@@ -21,6 +21,9 @@
 		CF84184128923ACE007A6C7C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84184028923ACE007A6C7C /* WebViewController.swift */; };
 		CFBEB93E2898BD200000759A /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEB93D2898BD200000759A /* BoxOfficeModel.swift */; };
 		CFBEB9402898C0550000759A /* AuthKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEB93F2898C0550000759A /* AuthKey.swift */; };
+		CFBEB942289910F30000759A /* BeerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEB941289910F30000759A /* BeerCollectionViewController.swift */; };
+		CFBEB945289912B10000759A /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEB944289912B10000759A /* BeerCollectionViewCell.swift */; };
+		CFBEB947289928F90000759A /* BeerDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEB946289928F90000759A /* BeerDescriptionViewController.swift */; };
 		CFD41C512890DD7D00783E7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C502890DD7D00783E7D /* AppDelegate.swift */; };
 		CFD41C532890DD7D00783E7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C522890DD7D00783E7D /* SceneDelegate.swift */; };
 		CFD41C552890DD7D00783E7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C542890DD7D00783E7D /* ViewController.swift */; };
@@ -46,6 +49,9 @@
 		CF84184028923ACE007A6C7C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CFBEB93D2898BD200000759A /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
 		CFBEB93F2898C0550000759A /* AuthKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKey.swift; sourceTree = "<group>"; };
+		CFBEB941289910F30000759A /* BeerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewController.swift; sourceTree = "<group>"; };
+		CFBEB944289912B10000759A /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
+		CFBEB946289928F90000759A /* BeerDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BeerDescriptionViewController.swift; path = NetWorkBasicLec/BeerDescriptionViewController.swift; sourceTree = SOURCE_ROOT; };
 		CFD41C4D2890DD7D00783E7D /* NetWorkBasicLec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetWorkBasicLec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD41C502890DD7D00783E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD41C522890DD7D00783E7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +100,17 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		CFBEB9432899110B0000759A /* Beer */ = {
+			isa = PBXGroup;
+			children = (
+				CFBEB946289928F90000759A /* BeerDescriptionViewController.swift */,
+				CFBEB941289910F30000759A /* BeerCollectionViewController.swift */,
+				CFBEB944289912B10000759A /* BeerCollectionViewCell.swift */,
+				CF5AA8172897D63F00AE9008 /* RandomBeerViewController.swift */,
+			);
+			path = Beer;
+			sourceTree = "<group>";
+		};
 		CFD41C442890DD7D00783E7D = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +139,7 @@
 				CFD41C522890DD7D00783E7D /* SceneDelegate.swift */,
 				CFD41C542890DD7D00783E7D /* ViewController.swift */,
 				CFD41C562890DD7D00783E7D /* Main.storyboard */,
-				CF5AA8172897D63F00AE9008 /* RandomBeerViewController.swift */,
+				CFBEB9432899110B0000759A /* Beer */,
 				CF23520428935D4600C6E6D0 /* LocationViewController.swift */,
 				CFD41C712892236400783E7D /* LottoViewController.swift */,
 				CFD41C642890E1FC00783E7D /* SearchViewController.swift */,
@@ -229,8 +246,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBEB942289910F30000759A /* BeerCollectionViewController.swift in Sources */,
 				CFD41C552890DD7D00783E7D /* ViewController.swift in Sources */,
+				CFBEB945289912B10000759A /* BeerCollectionViewCell.swift in Sources */,
 				CF5AA8182897D63F00AE9008 /* RandomBeerViewController.swift in Sources */,
+				CFBEB947289928F90000759A /* BeerDescriptionViewController.swift in Sources */,
 				CF5AA81028975FD200AE9008 /* UserDefaultsHelper.swift in Sources */,
 				CFBEB9402898C0550000759A /* AuthKey.swift in Sources */,
 				CFBEB93E2898BD200000759A /* BoxOfficeModel.swift in Sources */,

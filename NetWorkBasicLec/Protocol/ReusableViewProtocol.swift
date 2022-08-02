@@ -27,3 +27,9 @@ extension UITableViewCell: ResuebleViewProtocol {
         return String(describing: self)
     }
 }
+
+extension UICollectionViewCell: ResuebleViewProtocol{
+    static var identifier: String { // 연산 프로퍼티 get만 사용한다면, get 생략 가능
+        return String(describing: self)
+    }
+}
