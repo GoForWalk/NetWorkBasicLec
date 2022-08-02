@@ -19,6 +19,8 @@
 		CF5AA81B2897DD4200AE9008 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CF5AA81A2897DD4200AE9008 /* Kingfisher */; };
 		CF84183F289230B7007A6C7C /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84183E289230B7007A6C7C /* TranslateViewController.swift */; };
 		CF84184128923ACE007A6C7C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84184028923ACE007A6C7C /* WebViewController.swift */; };
+		CFBEB93E2898BD200000759A /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEB93D2898BD200000759A /* BoxOfficeModel.swift */; };
+		CFBEB9402898C0550000759A /* AuthKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEB93F2898C0550000759A /* AuthKey.swift */; };
 		CFD41C512890DD7D00783E7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C502890DD7D00783E7D /* AppDelegate.swift */; };
 		CFD41C532890DD7D00783E7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C522890DD7D00783E7D /* SceneDelegate.swift */; };
 		CFD41C552890DD7D00783E7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C542890DD7D00783E7D /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 		CF5AA8172897D63F00AE9008 /* RandomBeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomBeerViewController.swift; sourceTree = "<group>"; };
 		CF84183E289230B7007A6C7C /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = SOURCE_ROOT; };
 		CF84184028923ACE007A6C7C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		CFBEB93D2898BD200000759A /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
+		CFBEB93F2898C0550000759A /* AuthKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKey.swift; sourceTree = "<group>"; };
 		CFD41C4D2890DD7D00783E7D /* NetWorkBasicLec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetWorkBasicLec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD41C502890DD7D00783E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD41C522890DD7D00783E7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 			children = (
 				CF0766FA2893851900EE55B1 /* Cafe24Ssurround.ttf */,
 				CF0766FC2893852600EE55B1 /* Mabinogi_Classic_OTF.otf */,
+				CFBEB93F2898C0550000759A /* AuthKey.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 				CF23520428935D4600C6E6D0 /* LocationViewController.swift */,
 				CFD41C712892236400783E7D /* LottoViewController.swift */,
 				CFD41C642890E1FC00783E7D /* SearchViewController.swift */,
+				CFBEB93D2898BD200000759A /* BoxOfficeModel.swift */,
 				CFD41C682890E4E400783E7D /* ListTableViewCell.swift */,
 				CFD41C692890E4E400783E7D /* ListTableViewCell.xib */,
 				CFD41C592890DD7F00783E7D /* Assets.xcassets */,
@@ -226,6 +232,8 @@
 				CFD41C552890DD7D00783E7D /* ViewController.swift in Sources */,
 				CF5AA8182897D63F00AE9008 /* RandomBeerViewController.swift in Sources */,
 				CF5AA81028975FD200AE9008 /* UserDefaultsHelper.swift in Sources */,
+				CFBEB9402898C0550000759A /* AuthKey.swift in Sources */,
+				CFBEB93E2898BD200000759A /* BoxOfficeModel.swift in Sources */,
 				CF84184128923ACE007A6C7C /* WebViewController.swift in Sources */,
 				CFD41C512890DD7D00783E7D /* AppDelegate.swift in Sources */,
 				CFD41C652890E1FC00783E7D /* SearchViewController.swift in Sources */,

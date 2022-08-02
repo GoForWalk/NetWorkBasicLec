@@ -20,11 +20,13 @@ class LottoViewController: UIViewController {
     var lottoPickerView = UIPickerView() // 클래스의 인스턴스 생성
         // 코드로 뷰를 만드는 기능이 훨씬 더 많이 남아있다!!
     
-    let numberList: [Int] = Array(1...1025).reversed()
+//    let numberList: [Int] = Array(1...1025).reversed()
+    var numberList: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setNumberList()
         numberTextField.inputView = lottoPickerView
         
         lottoPickerView.delegate = self
@@ -43,7 +45,7 @@ class LottoViewController: UIViewController {
     }
 
     func requestLotto(number: Int){
-        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)"
+        let url = "\(Endpoint.lottoURL)method=getLottoNumber&drwNo=\(number)"
 
         DispatchQueue.global(qos: .userInteractive).async {
             // AF: 200 ~ 299 status code: Success
@@ -91,6 +93,32 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "\(numberList[row])회차"
+    }
+    
+    func getTotalNumber() -> Int {
+        
+        let calender = Calendar.current
+        
+        let formatter = DateFormatter()
+
+        formatter.locale = Locale.init(identifier: "ko_kr")
+        formatter.timeZone = TimeZone(abbreviation: "KST")
+        formatter.dateFormat = "yyyy-MM-dd"
+
+        let date = Date.now
+        let stringDate = "2002-12-07"
+
+        let dataData = formatter.date(from: stringDate)!
+
+        let thisSunday = calender.dateComponents([.day], from: dataData, to: date )
+
+        return (thisSunday.day! / 7) + 1
+    }
+    
+    func setNumberList() {
+        let tempIntArray: [Int] = Array(1...getTotalNumber())
+        
+        numberList = tempIntArray.reversed()
     }
     
 }

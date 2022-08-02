@@ -59,7 +59,7 @@ class RandomBeerViewController: UIViewController {
                     let imageString = beerInfo["image_url"].string
                     let description = beerInfo["description"].string
                     
-                    print(name, imageString, description)
+                    print(name, imageString?.description, description)
                     self.getBeerImage(imageURL: imageString)
                     
                     DispatchQueue.main.async {
