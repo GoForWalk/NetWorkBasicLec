@@ -9,6 +9,7 @@ import UIKit
 
 import Alamofire
 import SwiftyJSON
+import JGProgressHUD
 /*
  Swift Protocol
  - Delegate
@@ -29,6 +30,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
+    
+    let hud = JGProgressHUD()
     
     // boxOffice 배열
     var list: [BoxOfficeModel] = []
@@ -54,13 +57,16 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func requestBoxOffice(dateText: String){
         
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view, animated: true)
+        
         self.list.removeAll()
                     
         let url = "\(Endpoint.boxOfficeURL)key=\(AuthKey.BOXOFFICE)&targetDt=\(dateText)"
         
         DispatchQueue.global(qos: .userInteractive).async {
             // AF: 200 ~ 299 status code: Success
-            AF.request(url, method: .get).validate().responseJSON { response in
+            AF.request(url, method: .get).validate().responseData { response in
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
@@ -78,13 +84,18 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     }
                     
                     self.searchTableView.reloadData()
+                    self.hud.dismiss(animated: true)
                     
                     print(self.list)
                 case .failure(let error):
                     print(error)
+                    
+                    // 시뮬레이터 실패 테스트 >
+                    
                 }
             }
         }
+        
     }
 
     
@@ -116,7 +127,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let yesterdaty = Calendar.current.date(byAdding: DateComponents(day: -1), to: date)!
 
         print(formatter.string(from: yesterdaty))
-        return formatter.string(from: yesterdaty)
+        
+        let result = formatter.string(from: yesterdaty)
+        
+        searchBar.text = result
+        
+        return result
     }
 }
 
