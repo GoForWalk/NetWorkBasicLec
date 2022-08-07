@@ -7,8 +7,6 @@
 
 import UIKit
 
-import Alamofire
-import SwiftyJSON
 import Kingfisher
 
 class ImageSearchViewController: UIViewController {
@@ -17,7 +15,6 @@ class ImageSearchViewController: UIViewController {
     
     var startPage = 1
     let displayCellCount = 100
-    var searchWord = "클린코드"
     var totalCellCount = 0
     
     @IBOutlet weak var imageSearchBar: UISearchBar!
@@ -35,37 +32,13 @@ class ImageSearchViewController: UIViewController {
     }
 
     // fetch..., request..., callRequest..., get... -> response에 따라 네이밍을 설정해주기도 함.
-    // 내일(08.04) pagenation
     func fetchImage(imageTitle: String) {
-        
-        let url = Endpoint.imageSearchURL
-        let utf8imageTitle = imageTitle.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
-        print(utf8imageTitle)
-        
-        let header: HTTPHeaders = ["X-Naver-Client-Id" : AuthKey.NAVER_ID, "X-Naver-Client-Secret": AuthKey.NAVER_SECRET]
-        let params: Parameters = ["query": "\(utf8imageTitle)", "display": displayCellCount, "start": startPage]
-        
-        DispatchQueue.global(qos: .userInteractive).async {
-            // AF: 200 ~ 299 status code: Success
-            AF.request(url, method: .get, parameters: params, headers: header).validate(statusCode: 200...500).responseJSON { response in
-                                
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    print("JSON: \(json)")
-                    
-                    self.totalCellCount = json["total"].intValue
-                    
-                    json["items"].forEach { (_, json) in
-                        self.stringURLArray.append(json["thumbnail"].string)
-                    }
-                    
-                    self.searchCollectionView.reloadData()
-                    
-                case .failure(let error):
-                    print(error)
-                }
+        ImageSearchAPIManager.shared.fetchImageData(imageTitle: imageTitle, startPage: startPage, displayCellCount: displayCellCount) { totalCellCount, stringURLArray in
+            self.stringURLArray.append(contentsOf: stringURLArray)
+            self.totalCellCount = totalCellCount
+            
+            DispatchQueue.main.async {
+                self.searchCollectionView.reloadData()
             }
         }
     }//: fetchImage

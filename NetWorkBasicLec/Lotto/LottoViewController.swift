@@ -12,6 +12,9 @@ import SwiftyJSON
 
 class LottoViewController: UIViewController {
 
+    let lottoAPIManager = LottoAPIManager.shared
+    let lottoModel = LottoModel.shared
+    
     @IBOutlet weak var numberTextField: UITextField!
 //    @IBOutlet weak var lottoPickerView: UIPickerView!
     @IBOutlet var winNumberLabels: [UILabel]!
@@ -32,7 +35,7 @@ class LottoViewController: UIViewController {
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
         
-        requestLotto(number: numberList[0])
+        determineFetchAPI(number: numberList[0])
     }
     
     func setWinNumbers(winNumbers: [Int]?) {
@@ -45,33 +48,31 @@ class LottoViewController: UIViewController {
     }
 
     func requestLotto(number: Int){
-        let url = "\(Endpoint.lottoURL)method=getLottoNumber&drwNo=\(number)"
-
-        DispatchQueue.global(qos: .userInteractive).async {
-            // AF: 200 ~ 299 status code: Success
-            AF.request(url, method: .get).validate(statusCode: 200..<300).responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    print("JSON: \(json)")
-                    
-                    let bonus = json["bnusNo"].intValue
-                    let date = json["drwNoDate"].stringValue
-                    print(bonus, date)
-                    
-                    let winNumber: [Int] = [json["drwtNo1"].intValue, json["drwtNo2"].intValue, json["drwtNo3"].intValue, json["drwtNo4"].intValue, json["drwtNo5"].intValue, json["drwtNo6"].intValue, json["bnusNo"].intValue]
-                    
-                    DispatchQueue.main.async {
-                        self.numberTextField.text = date
-                        self.setWinNumbers(winNumbers: winNumber)
-                    }
-                    
-                case .failure(let error):
-                    print(error)
-                }
+        lottoAPIManager.fetchLottoAPI(number: number) { [weak self] winNumber, date in
+            
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                self.numberTextField.text = date
+                self.setWinNumbers(winNumbers: winNumber)
             }
+
+//            self.lottoModel.appendWinNumber(key: number, winNumber: winNumber)
+//            self.lottoModel.appendDate(key: number, date: date)
         }
+        
     }
+    
+    func determineFetchAPI(number: Int) {
+        
+        guard let winNumber = lottoModel.getWinNumber(key: number) else {
+            requestLotto(number: number)
+            return }
+        print(#function, "\(number)회차 -> UserDefaults")
+        setWinNumbers(winNumbers: winNumber)
+        numberTextField.text = lottoModel.getDatas(key: number)!
+    }
+    
 }
 
 // PickerView
@@ -86,7 +87,7 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        requestLotto(number: numberList[row])
+        determineFetchAPI(number: numberList[row])
 //        numberTextField.text = "\(numberList[row])회차"
         print(component, row)
     }
@@ -119,6 +120,7 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         let tempIntArray: [Int] = Array(1...getTotalNumber())
         
         numberList = tempIntArray.reversed()
+        UserDefaults.standard.set(numberList.first, forKey: "lastTotalNumber")
     }
     
 }

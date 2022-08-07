@@ -10,6 +10,4 @@ import UIKit
 class ImageSearchCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var searchImageView: UIImageView!
-    
-    
 }

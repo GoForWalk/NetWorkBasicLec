@@ -10,6 +10,8 @@
 		CF0766FB2893851900EE55B1 /* Cafe24Ssurround.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF0766FA2893851900EE55B1 /* Cafe24Ssurround.ttf */; };
 		CF0766FD2893852600EE55B1 /* Mabinogi_Classic_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF0766FC2893852600EE55B1 /* Mabinogi_Classic_OTF.otf */; };
 		CF23520528935D4600C6E6D0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23520428935D4600C6E6D0 /* LocationViewController.swift */; };
+		CF29FDEF289F819E00CE685F /* LottoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF29FDEE289F819E00CE685F /* LottoAPIManager.swift */; };
+		CF29FDF1289F928B00CE685F /* LottoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF29FDF0289F928B00CE685F /* LottoModel.swift */; };
 		CF4239EB289B48C40065CD5E /* ImageSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4239EA289B48C40065CD5E /* ImageSearchCollectionViewCell.swift */; };
 		CF4239F0289B50850065CD5E /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = CF4239EF289B50850065CD5E /* JGProgressHUD */; };
 		CF5AA80B2897527E00AE9008 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5AA80A2897527E00AE9008 /* ReusableViewProtocol.swift */; };
@@ -26,6 +28,7 @@
 		CFBEB942289910F30000759A /* BeerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEB941289910F30000759A /* BeerCollectionViewController.swift */; };
 		CFBEB945289912B10000759A /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEB944289912B10000759A /* BeerCollectionViewCell.swift */; };
 		CFBEB947289928F90000759A /* BeerDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEB946289928F90000759A /* BeerDescriptionViewController.swift */; };
+		CFC0CA98289CB3FB00365340 /* ImageSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC0CA97289CB3FB00365340 /* ImageSearchAPIManager.swift */; };
 		CFD41C512890DD7D00783E7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C502890DD7D00783E7D /* AppDelegate.swift */; };
 		CFD41C532890DD7D00783E7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C522890DD7D00783E7D /* SceneDelegate.swift */; };
 		CFD41C552890DD7D00783E7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD41C542890DD7D00783E7D /* ViewController.swift */; };
@@ -44,6 +47,8 @@
 		CF0766FA2893851900EE55B1 /* Cafe24Ssurround.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Ssurround.ttf; sourceTree = "<group>"; };
 		CF0766FC2893852600EE55B1 /* Mabinogi_Classic_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mabinogi_Classic_OTF.otf; sourceTree = "<group>"; };
 		CF23520428935D4600C6E6D0 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		CF29FDEE289F819E00CE685F /* LottoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPIManager.swift; sourceTree = "<group>"; };
+		CF29FDF0289F928B00CE685F /* LottoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoModel.swift; sourceTree = "<group>"; };
 		CF4239EA289B48C40065CD5E /* ImageSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF5AA80A2897527E00AE9008 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		CF5AA80D289757A400AE9008 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 		CFBEB941289910F30000759A /* BeerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewController.swift; sourceTree = "<group>"; };
 		CFBEB944289912B10000759A /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
 		CFBEB946289928F90000759A /* BeerDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BeerDescriptionViewController.swift; path = NetWorkBasicLec/BeerDescriptionViewController.swift; sourceTree = SOURCE_ROOT; };
+		CFC0CA97289CB3FB00365340 /* ImageSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchAPIManager.swift; sourceTree = "<group>"; };
 		CFD41C4D2890DD7D00783E7D /* NetWorkBasicLec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetWorkBasicLec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD41C502890DD7D00783E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD41C522890DD7D00783E7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +103,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		CF29FDF2289F929200CE685F /* Lotto */ = {
+			isa = PBXGroup;
+			children = (
+				CFD41C712892236400783E7D /* LottoViewController.swift */,
+				CF29FDF0289F928B00CE685F /* LottoModel.swift */,
+			);
+			path = Lotto;
+			sourceTree = "<group>";
+		};
 		CF4239EC289B4EDA0065CD5E /* ImageSearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +151,15 @@
 			path = Beer;
 			sourceTree = "<group>";
 		};
+		CFC0CA96289CB3DA00365340 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				CFC0CA97289CB3FB00365340 /* ImageSearchAPIManager.swift */,
+				CF29FDEE289F819E00CE685F /* LottoAPIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
 		CFD41C442890DD7D00783E7D = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +179,7 @@
 		CFD41C4F2890DD7D00783E7D /* NetWorkBasicLec */ = {
 			isa = PBXGroup;
 			children = (
+				CFC0CA96289CB3DA00365340 /* APIManager */,
 				CF5AA80C2897578300AE9008 /* Constant */,
 				CF0766F9289384F400EE55B1 /* Resource */,
 				CFD41C6E28920CB400783E7D /* Protocol */,
@@ -168,7 +193,7 @@
 				CFD41C542890DD7D00783E7D /* ViewController.swift */,
 				CFD41C562890DD7D00783E7D /* Main.storyboard */,
 				CF23520428935D4600C6E6D0 /* LocationViewController.swift */,
-				CFD41C712892236400783E7D /* LottoViewController.swift */,
+				CF29FDF2289F929200CE685F /* Lotto */,
 				CFBEB93D2898BD200000759A /* BoxOfficeModel.swift */,
 				CFD41C592890DD7F00783E7D /* Assets.xcassets */,
 				CFD41C5B2890DD7F00783E7D /* LaunchScreen.storyboard */,
@@ -278,12 +303,14 @@
 				CF5AA8182897D63F00AE9008 /* RandomBeerViewController.swift in Sources */,
 				CFBEB947289928F90000759A /* BeerDescriptionViewController.swift in Sources */,
 				CF5AA81028975FD200AE9008 /* UserDefaultsHelper.swift in Sources */,
+				CF29FDF1289F928B00CE685F /* LottoModel.swift in Sources */,
 				CFEF3107289A095A008511B9 /* ImageSearchViewController.swift in Sources */,
 				CFBEB9402898C0550000759A /* AuthKey.swift in Sources */,
 				CFBEB93E2898BD200000759A /* BoxOfficeModel.swift in Sources */,
 				CF84184128923ACE007A6C7C /* WebViewController.swift in Sources */,
 				CFD41C512890DD7D00783E7D /* AppDelegate.swift in Sources */,
 				CFD41C652890E1FC00783E7D /* SearchViewController.swift in Sources */,
+				CF29FDEF289F819E00CE685F /* LottoAPIManager.swift in Sources */,
 				CFD41C722892236400783E7D /* LottoViewController.swift in Sources */,
 				CF23520528935D4600C6E6D0 /* LocationViewController.swift in Sources */,
 				CFD41C532890DD7D00783E7D /* SceneDelegate.swift in Sources */,
@@ -292,6 +319,7 @@
 				CF5AA80B2897527E00AE9008 /* ReusableViewProtocol.swift in Sources */,
 				CFD41C6A2890E4E400783E7D /* ListTableViewCell.swift in Sources */,
 				CF4239EB289B48C40065CD5E /* ImageSearchCollectionViewCell.swift in Sources */,
+				CFC0CA98289CB3FB00365340 /* ImageSearchAPIManager.swift in Sources */,
 				CF5AA80E289757A400AE9008 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

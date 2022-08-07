@@ -9,6 +9,8 @@ import UIKit
 
 class LocationViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     // Notification 1.
     let notificationCenter = UNUserNotificationCenter.current()
     
@@ -30,6 +32,29 @@ class LocationViewController: UIViewController {
     @IBAction func localNotificationButtonTapped(_ sender: UIButton) {
         sendNotification()
     }
+    
+    @IBAction func downloadImage(_ sender: UIButton) {
+    
+        print("1", Thread.isMainThread)
+        // 동시에 여러 작업이 가능하게 해줘!
+        DispatchQueue.global(qos: .default).async { [weak self] in
+            
+            print("2", Thread.isMainThread)
+            let url = "https://apod.nasa.gov/apod/image/2208/M13_final2_sinfirma.jpg"
+            
+            let data = try! Data(contentsOf: URL(string: url)!)
+            
+            let image = UIImage(data: data)
+
+            DispatchQueue.main.async {
+                print("3", Thread.isMainThread)
+                self?.imageView.image = image
+            }
+        }
+        // kingfisher 안쓰고 이미지 로드 받는 방법
+    }
+    
+    
     
     
     // Notification 2. 권한 요청
